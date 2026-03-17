@@ -6,10 +6,10 @@ A collection of ComfyUI workflows I've built or adapted for my generative AI pra
 
 ## Workflows
 
-### WF01 — Generative World Creator
+### Generative World Creator
 **`360° HDRI panorama generation for real-time installation`**
 
-![WF01 preview](images/360_world_gen.jpg)
+![preview](images/360_world_gen.jpg)
 
 Built for the **Moscow-2030** generative installation (2025). Visitors typed a world description into a TouchDesigner touchscreen interface. The workflow converted text into a seamless 360° HDRI panorama, which TouchDesigner wrapped around a sphere on a large display. Over the course of the installation, ~10,000 images were generated.
 
@@ -29,10 +29,10 @@ Built for the **Moscow-2030** generative installation (2025). Visitors typed a w
 
 ---
 
-### WF02 — WAN 2.2 FLF2V Video Generation
+### WAN 2.2 FLF2V Video Generation
 **`First-Last Frame to Video with prompt expansion`**
 
-![WF02 preview](images/wan22flf2v.jpg)
+![preview](images/wan22flf2v.jpg)
 
 Image-to-video workflow using **Wan 2.2 I2V 14B** (fp8) with the LightX2V speed LoRA. Takes a pair of images (first frame + last frame) and generates the interpolated video between them. Includes a Google Translate node for working with Russian-language prompts, and an LLM-based prompt expander for richer descriptions.
 
@@ -62,10 +62,10 @@ Image-to-video workflow using **Wan 2.2 I2V 14B** (fp8) with the LightX2V speed 
 
 ---
 
-### WF03 — Flux Klein 9B Batch Image Editing
+### Flux Klein 9B Batch Image Editing
 **`Batch image editing with two reference injection streams`**
 
-![WF03 preview](images/FluxKlein9b.jpg)
+![preview](images/FluxKlein9b.jpg)
 
 Image editing workflow built around **Flux 2 Klein 9B** — a compact but capable model with a Qwen 3 8B text encoder. Uses two `FL_ImageRandomizer` nodes to inject random images from two separate folders (local content + style references) into the conditioning pipeline simultaneously. Supports batch processing with `ClownsharKSampler_Beta` using fully implicit Gauss–Legendre solvers.
 
@@ -92,10 +92,10 @@ Image editing workflow built around **Flux 2 Klein 9B** — a compact but capabl
 
 ---
 
-### WF04 — Flux Unsampling + Style Transfer
+### Flux Unsampling + Style Transfer
 **`Image editing guided by Redux style reference + LoRA`**
 
-![WF04 preview](images/unsampling.jpg)
+![preview](images/unsampling.jpg)
 
 Style-guided image editing via **BNK Unsampler** — the source image is unsampled (noise is re-injected) and then resampled using a Redux style conditioning as a directional reference. Uses `LatentInterpolate` at multiple stages to blend between the original latent and the Redux-guided result, allowing fine control over how much the style influences the output. LoRA stacking adds further style specificity.
 
@@ -118,10 +118,10 @@ Style-guided image editing via **BNK Unsampler** — the source image is unsampl
 
 ---
 
-### WF05 — Double Flux Redux + Hires Fix
+### Flux Redux + Hires Fix
 **`Dual Redux style pass with tiled upscaling`**
 
-![WF05 preview](images/redux_hir.jpg)
+![preview](images/redux_hir.jpg)
 
 Two-pass Redux workflow with a full **hires fix** stage using `TiledDiffusion` (Mixture of Diffusers). The first pass generates an image at base resolution guided by two Redux conditioning inputs. The second pass upscales and refines tiles at high resolution, allowing output up to 1920px+ without VRAM overflow. Each Redux input is processed separately and merged via `FluxReduxImageEncoder`.
 
@@ -160,4 +160,4 @@ Two-pass Redux workflow with a full **hires fix** stage using `TiledDiffusion` (
 
 These workflows are part of my generative AI practice. Some were built from scratch for specific projects, others were adapted and extended from existing approaches. All have been tested in production on my own work.
 
-**[solarwnd.com](https://solarwnd.com)** · [Instagram](https://www.instagram.com/solar.w/) · [Telegram](https://t.me/solar_w)
+**[alekseyefremov.com](https://alekseyefremov.com/)** · [Instagram](https://www.instagram.com/solar.w/) · [Telegram](https://t.me/slrwnd)
